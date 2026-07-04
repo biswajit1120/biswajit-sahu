@@ -256,7 +256,6 @@ Our Team
 <p>✔️ Single Line Diagram (SLD)</p>
 <p>✔️ AutoCAD Electrical</p>
 <p>✔️ BOM Preparation</p>
-<p>✔️ BOM Preparation</p>
 
 </div>
 
@@ -320,6 +319,48 @@ GitHub
 <footer>
 © 2026 Biswajit Sahu | Electrical Engineering Portfolio
 </footer>
+<!-- Appointment Popup -->
+<div id="appointmentPopup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:9999;">
 
+<div style="background:#fff;width:90%;max-width:400px;margin:60px auto;padding:20px;border-radius:10px;position:relative;">
+
+<span onclick="closeAppointmentForm()" style="position:absolute;right:15px;top:10px;font-size:24px;cursor:pointer;">&times;</span>
+
+<h2>Book Appointment</h2>
+
+<input id="name" type="text" placeholder="Your Name" style="width:100%;padding:10px;margin:10px 0;">
+
+<input id="purpose" type="text" placeholder="Purpose of Work" style="width:100%;padding:10px;margin:10px 0;">
+
+<input id="phone" type="tel" placeholder="Contact Number" style="width:100%;padding:10px;margin:10px 0;">
+
+<button onclick="sendWhatsApp()" style="width:100%;padding:12px;background:#25D366;color:white;border:none;border-radius:6px;font-size:16px;">
+Submit
+</button>
+
+</div>
+</div>
+
+<script>
+function openAppointmentForm(){
+document.getElementById("appointmentPopup").style.display="block";
+}
+
+function closeAppointmentForm(){
+document.getElementById("appointmentPopup").style.display="none";
+}
+
+function sendWhatsApp(){
+
+let name=document.getElementById("name").value;
+let purpose=document.getElementById("purpose").value;
+let phone=document.getElementById("phone").value;
+
+let msg=*New Appointment Request*%0A%0AName: ${name}%0APurpose: ${purpose}%0AContact: ${phone};
+
+window.open("https://wa.me/917682061120?text="+msg,"_blank");
+
+}
+</script>
 </body>
 </html>
