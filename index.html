@@ -354,12 +354,11 @@ document.getElementById("appointmentPopup").style.display="none";
 }
 
 function sendWhatsApp(){
+ let name=document.getElementById("name").value;
+ let purpose=document.getElementById("purpose").value;
+ let phone=document.getElementById("phone").value;
 
-let name=document.getElementById("name").value;
-let purpose=document.getElementById("purpose").value;
-let phone=document.getElementById("phone").value;
-
-let msg =`*New Appointment Request*%0A%0AName: ${name}%0APurpose: ${purpose}%0AContact: ${phone}`;
+ let msg =`*New Appointment Request*%0A%0AName:${name}%0APurpose:${purpose}%0AContact: ${phone}`;
 
 window.open("https://wa.me/917682061120?text="+msg,"_blank");
 }
