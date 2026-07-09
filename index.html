@@ -20,18 +20,26 @@ color:#fff;
 }
 
 header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 10%;
-    position:sticky;
-    top:0;
+    padding:18px 8%;
     z-index:1000;
 
-    background:rgba(8,20,40,0.95);
-    backdrop-filter:blur(10px);
-    border-bottom:2px solid #00d4ff;
-    box-shadow:0 4px 20px rgba(0,212,255,0.25);
+    background:rgba(5,15,35,0.85);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(0,212,255,.35);
+    box-shadow:
+        0 10px 40px rgba(0,0,0,.55),
+        0 0 25px rgba(0,212,255,.15);
+
+    transition:.4s ease;
 }
 
 .logo{
@@ -39,7 +47,18 @@ font-size:28px;
 font-weight:bold;
 color:#00d4ff;
 }
+.logo img{
+    height:85px;
+    width:auto;
+    display:block;
+    filter:drop-shadow(0 0 20px #00d4ff);
+    transition:.4s;
+}
 
+.logo img:hover{
+    transform:scale(1.08);
+    filter:drop-shadow(0 0 35px #00d4ff);
+}
 nav a{
 color:white;
 text-decoration:none;
@@ -126,7 +145,7 @@ background:#111827;
 
 <header>
 <div class="logo">
-    <img src="logo.png" alt="Modulux Power Logo" style="height:80px; width:auto;">
+    <img src="logo.png" alt="Modulux Power Logo" style="height:90px; width:auto; filter:drop-shadow(0 0 20px #00d4ff);">
 </div>
 
 <nav>
