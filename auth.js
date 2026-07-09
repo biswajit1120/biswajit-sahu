@@ -16,7 +16,9 @@ if (signupBtn) {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       alert("Account created successfully!");
-      window.location.href = "dashboard.html";
+      const params = new URLSearchParams(window.location.search);
+const redirect = params.get("redirect") || "dashboard.html";
+window.location.href = redirect;
     } catch (e) {
       alert(e.message);
     }
