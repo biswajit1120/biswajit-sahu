@@ -3,24 +3,107 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Book Appointment</title>
+<title>Book Appointment | Modulux Power</title>
+
 <link rel="stylesheet" href="style.css">
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#0b1120;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+margin:0;
+}
+
+.container{
+width:420px;
+background:#111827;
+padding:30px;
+border-radius:15px;
+box-shadow:0 0 20px rgba(0,0,0,.5);
+}
+
+h2{
+text-align:center;
+color:#FFD54F;
+margin-bottom:20px;
+}
+
+input,select,textarea{
+width:100%;
+padding:12px;
+margin:8px 0;
+border:none;
+border-radius:8px;
+font-size:15px;
+}
+
+button{
+width:100%;
+padding:14px;
+background:#25D366;
+color:white;
+border:none;
+border-radius:8px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+margin-top:10px;
+}
+
+button:hover{
+background:#1fb658;
+}
+</style>
+
 </head>
+
 <body>
 
-<h2>Book Appointment</h2>
+<div class="container">
 
-<input type="text" id="name" placeholder="Your Name"><br><br>
+<h2>📅 Book Appointment</h2>
 
-<input type="email" id="email" placeholder="Your Email"><br><br>
+<input type="text" id="name" placeholder="Full Name">
 
-<input type="date" id="date"><br><br>
+<input type="email" id="email" placeholder="Email Address">
 
-<input type="time" id="time"><br><br>
+<input type="tel" id="phone" placeholder="Mobile Number">
 
-<textarea id="message" placeholder="Project Details"></textarea><br><br>
+<input type="date" id="date">
+
+<input type="time" id="time">
+
+<select id="service">
+<option value="">Select Service</option>
+<option>LT Panel Design</option>
+<option>HT Panel Design</option>
+<option>APFC Panel Design</option>
+<option>AutoCAD Electrical</option>
+<option>SLD Preparation</option>
+<option>BOQ Preparation</option>
+<option>GA Drawing</option>
+</select>
+
+<select id="project">
+<option value="">Project Requirement</option>
+<option>Industrial Panel</option>
+<option>Commercial Panel</option>
+<option>Solar Panel</option>
+<option>Retrofitting</option>
+<option>Maintenance</option>
+<option>Testing & Commissioning</option>
+<option>Other</option>
+</select>
+
+<textarea id="message" rows="4" placeholder="Additional Notes (Optional)"></textarea>
 
 <button id="bookBtn">Book Appointment</button>
+
+</div>
 
 <script type="module" src="appointment.js"></script>
 
