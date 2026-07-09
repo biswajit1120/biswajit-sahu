@@ -138,10 +138,121 @@ background:#111827;
      transform:translateY(0);
     }
 }
+#loader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#05070d;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:99999;
+transition:1s;
+}
+#loader img{
+width:150px;
+animation:pulse 1.5s infinite;
+}
+@keyframes pulse{
+0%{transform:scale(.9);}
+50%{transform:scale(1.05);}
+100%{transform:scale(.9);}
+}
+.cursor{
+position:fixed;
+width:250px;
+height:250px;
+background:radial-gradient(circle,rgba(255,193,7,.18),transparent 70%);
+pointer-events:none;
+border-radius:50%;
+transform:translate(-50%,-50%);
+z-index:1;
+}
+    .cursor{
+position:fixed;
+width:250px;
+height:250px;
+background:radial-gradient(circle,rgba(255,193,7,.18),transparent 70%);
+pointer-events:none;
+border-radius:50%;
+transform:translate(-50%,-50%);
+z-index:1;
+}
+    #progress{
+position:fixed;
+top:0;
+left:0;
+height:4px;
+width:0;
+background:linear-gradient(90deg,#FFD700,#FF8C00);
+z-index:999999;
+}
+    .whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+width:65px;
+height:65px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:32px;
+text-decoration:none;
+box-shadow:0 10px 30px rgba(0,0,0,.4);
+animation:float 2s infinite;
+z-index:999;
+}
+@keyframes float{
+50%{transform:translateY(-8px);}
+}
+    html{
+scroll-behavior:smooth;
+}
+
+section{
+opacity:0;
+transform:translateY(50px);
+animation:fadeIn 1s forwards;
+}
+
+@keyframes fadeIn{
+to{
+opacity:1;
+transform:translateY(0);
+}
 </style>
 </head>
-
+<script>
+window.onload=function(){
+document.getElementById("loader").style.opacity="0";
+setTimeout(()=>{
+document.getElementById("loader").style.display="none";
+},1000);
+}
+</script>
+    <script>
+const cursor=document.querySelector(".cursor");
+document.addEventListener("mousemove",e=>{
+cursor.style.left=e.clientX+"px";
+cursor.style.top=e.clientY+"px";
+});
+        window.onscroll = function () {
+    let h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let sc = (window.scrollY / h) * 100;
+    document.getElementById("progress").style.width = sc + "%";
+};
+</script>
+    <a href="https://wa.me/917682061120" class="whatsapp" target="_blank">💬</a>
 <body>
+    <div id="progress"></div>
+    <div class="cursor"></div>
+    <div id="loader">
+    <img src="logo.png"alt="Loading">
+</div>
 
 <header>
 <div class="logo">
