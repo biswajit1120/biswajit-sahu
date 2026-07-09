@@ -17,7 +17,7 @@ if (signupBtn) {
       await createUserWithEmailAndPassword(auth, email, password);
       alert("Account created successfully!");
       const params = new URLSearchParams(window.location.search);
-const redirect = params.get("redirect") || "dashboard.html";
+const redirect = params.get("redirect") || "index.html";
 window.location.href = redirect;
     } catch (e) {
       alert(e.message);
@@ -35,7 +35,9 @@ if (loginBtn) {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       alert("Login Successful!");
-      window.location.href = "dashboard.html";
+       const params = new URLSearchParams(window.location.search);
+  const redirect = params.get("redirect") || "index.html";
+      window.location.href = redirect;
     } catch (e) {
       alert(e.message);
     }
